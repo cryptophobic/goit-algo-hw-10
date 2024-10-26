@@ -2,15 +2,9 @@ import numpy as np
 import scipy.integrate as sci
 import matplotlib.pyplot as plt
 
-
 # Визначення функції та межі інтегрування
 def f(x):
     return x**2
-
-
-a = 0  # Нижня межа
-b = 2  # Верхня межа
-
 
 # Функція для обчислення інтегралу методом Монте-Карло
 def monte_carlo_integration(f, a, b, num_samples=10000):
@@ -27,6 +21,9 @@ def monte_carlo_integration(f, a, b, num_samples=10000):
 
 # Основна частина програми
 if __name__ == "__main__":
+    a = 0  # Нижня межа
+    b = 2  # Верхня межа
+
     # Обчислення числового інтегралу
     numerical_integral, numerical_error = sci.quad(f, a, b)
     print(f"Числовий інтеграл: {numerical_integral} з помилкою {numerical_error}")
