@@ -13,7 +13,7 @@ b = 2  # Верхня межа
 
 
 # Функція для обчислення інтегралу методом Монте-Карло
-def mc_integral(a, b, num_samples=10000):
+def monte_carlo_integration(f, a, b, num_samples=10000):
     # Генерація випадкових точок
     x_random = np.random.uniform(a, b, num_samples)  # Випадкові x в межах [a, b]
     y_random = np.random.uniform(0, f(b), num_samples)  # Випадкові y в межах [0, max(f(x))]
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     # Перевірка результатів для різної кількості точок
     num_samples = [100, 1000, 10000, 100000, 1000000]
     for sample in num_samples:
-        mc_result = mc_integral(a, b, num_samples=sample)
+        mc_result = monte_carlo_integration(f, a, b, num_samples=sample)
         print(f"Monte Carlo інтеграл ({sample} точок): {mc_result}")
 
     # Побудова графіка
